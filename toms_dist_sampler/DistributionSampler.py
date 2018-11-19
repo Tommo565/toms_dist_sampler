@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 import warnings
 
 
@@ -188,10 +187,10 @@ class DistributionSampler:
         Instance.print_sample()
 
         '''
-        if sample is None:
+        if self.sample is None:
             print(
                 'No Sample to print. Use the .set_parameters() method to set '
-                'appropriate parameters and then run the draw() method to '
+                'appropriate parameters and then run the .draw() method to '
                 'create a sample.'
             )
 
@@ -534,8 +533,8 @@ class DistributionSampler:
 
         else:
             raise ValueError(
-                'You have not yet created a sample to summarise. You can create '
-                'a sample by calling the draw() method with appropriate '
+                'You have not created a sample to summarise. You can create'
+                ' a sample by calling the draw() method with appropriate '
                 'parameters e.g. Instance.draw(5000, "Normal", mean=2, sd=5) '
                 'or of you have already input the parameters, simple call the '
                 'draw method to create the sample e.g. Instance.draw()'
