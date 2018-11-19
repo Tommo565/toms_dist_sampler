@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
     name='toms-dist-sampler',
-    version='0.0.2',
+    version='0.0.1',
     description=(
         'A distribution sampler for Normal, Poisson and Binomial '
         'distributions.'
