@@ -13,7 +13,7 @@ setuptools.setup(
         'distributions.'
     ),
     url='https://github.com/Tommo565/distribution-sampler',
-    author='Flying Circus',
+    author='Tom Ewing',
     author_email='ewingt1979@gmail.com',
     license='MIT',
     packages=setuptools.find_packages(),
