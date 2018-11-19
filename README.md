@@ -1,10 +1,8 @@
 # toms_dist_sampler
 
-[![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
-
 ## Introduction
 
-Tom's Distribution Sampler makes creating Normal, Poisson and Binomial samples and getting the summary statistics on these easy! I created the sampler as a bit of a pet project to get used to writing OOP and also releasing Python packages. This is my first attempt at it and whilst it was great fun, I learned a lot also! If anyone finds an actual use for it (possibly unlikely?) please let me know.
+Tom's Distribution Sampler makes creating Normal, Poisson and Binomial samples and getting the summary statistics on these in Python easy! I created the sampler as a bit of a pet project to get used to writing OOP and also releasing Python packages. This is my first attempt at it and whilst it was great fun, I learned a lot also! If anyone finds an actual use for it (possibly unlikely?) please let me know. Or buy me a beer. I'd rather the beer in all honesty.
 
 
 ## Installation
@@ -84,41 +82,58 @@ The class is flexible and when creating the instance you can either do so with p
 
 or without:
 
-`my_instance = DS()`
+`MyInstance = DS()`
 
 Creating an instance with parameters will result in the sample being generated immediately. However if you create it without parameters and want to add them, you can do so with the `set_parameters()` method as follows:
 
-`my_instance.set_parameters(dist='Poisson', size=5000, lam=3)`
+`MyInstance.set_parameters(dist='Poisson', size=5000, lam=3)`
 
 You can print the parameters at any time using the `print_parameters()` method as follows:
 
-`my_instance.print_parameters()`
+`MyInstance.print_parameters()`
 
 Note that if you switch between distribution types (e.g. `dist=Normal` and `dist=Poisson`) then the previous parameters are retained. This will generate a warning, and won't affect your results but I do reccomend that if you wish to switch distribution types you create a different instance of the class as desribed above.
 
 To create a new sample, you must use the `.draw()` method after you have set parameters as follows:
 
-`my_instance.draw()`
+`MyInstance.draw()`
 
 You can also use the `.draw()` method at any time to create a new sample with your existing parameters.
 
 It you want to print your sample you can use th `.print_sample()` method as follows:
 
-`my_instance.print_sample()`
+`MyInstance.print_sample()`
 
 This prints your sample to the console.
 
-Finally the `.summarise()` method will print some summary statistics to the console, including minimum and maximum values as well as standard deviation and mean average.
+Finally the `.summarise()` method will print some summary statistics to the console, including minimum and maximum values as well as standard deviation and mean average:
+
+`MyInstance.summarise()`
+
+You can also call the help function for a more detailed overview of the functionality and parameters:
+
+`help(DS)`
+
+All samples are created in [numpy array](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.array.html) format. You can convert them to a more traditional python list as follows:
+
+```
+MyInstance = DS(dist='Normal', size=1000, mean=2, sd=5)`
+norm = MyInstance.draw()
+norm_list = norm.tolist()
+```
+
+Note that only the `size=` and `dist=` parameters are applicable to all distribution types. Depending upon the distribution that you choose, you will have to specify the right parameters for that distribution in the examples above. If you select an incorrect combination of parameters, you will receive an error message with further guidance on how to select the correct parameters.
+
 
 ## Tests
 
-Tests are performed using the [PyTest](https://docs.pytest.org/en/latest/) package. To run these, navigate to the `./tests/` folder in the command line and run
+Tests are performed using the [PyTest](https://docs.pytest.org/en/latest/) package. To run these, navigate to the `./tests/` folder in the command line and run:
 
 `pytest -v`
 
 ## Credits
 
-Massive thanks to [Matt Upson](https://github.com/ivyleavedtoadflax) whose help in checking this was invaluable. I probably owe him a beer 🍺
+Massive thanks to [Matt Upson](https://github.com/ivyleavedtoadflax) whose help in checking this was invaluable. I probably owe him a beer! 🍺
 
 ## License
 

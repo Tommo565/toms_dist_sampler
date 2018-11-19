@@ -1,5 +1,10 @@
 from setuptools import setup
 
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name='toms-dist-sampler',
     version='0.1',
@@ -13,10 +18,12 @@ setup(
     license='MIT',
     packages=['toms_dist_sampler'],
     zip_safe=False,
-      classifiers=[
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'License ::  MIT License',
         'Programming Language :: Python :: 3.7',
         'Topic :: Statistics :: Data Science',
-      ],
+    ],
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )

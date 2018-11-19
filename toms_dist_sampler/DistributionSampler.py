@@ -486,8 +486,10 @@ class DistributionSampler:
 
         return self.sample
 
-    def summarise(self, graph=True):
-        '''
+    def summarise(self, graph=True):   
+
+        
+        ''' 
         Overview
         --------
 
