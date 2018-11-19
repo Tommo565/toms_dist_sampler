@@ -13,11 +13,11 @@ Presently toms_dist_sampler is only available for Python3. Sorry about that Pyth
 
 I highly reccomend you install the package with `pip`:
 
-`pip install toms_dist_sampler`
+`pip install -i https://test.pypi.org/simple/ toms-dist-sampler`
 
 or alternatively if you have multple version of Python on your system:
 
-`pip3 install toms_dist_sampler`
+`pip3 install -i https://test.pypi.org/simple/ toms-dist-sampler`
 
 ### Installation via Github
 
